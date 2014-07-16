@@ -1,0 +1,25 @@
+Setting up Vim for Go programming (basic)
+
+Install pathogen (https://github.com/tpope/vim-pathogen)
+
+	mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+Install vim-go (https://github.com/fatih/vim-go)
+
+	cd ~/.vim/bundle
+	git clone https://github.com/fatih/vim-go.git
+
+Put this in ~/.vimrc:
+
+	execute pathogen#infect()
+
+	let g:go_disable_autoinstall = 1
+	let g:go_fmt_command = "goimports"
+
+	set autoindent
+	set dir=/tmp
+	set backupdir=/tmp
+
+	filetype plugin indent on
+
